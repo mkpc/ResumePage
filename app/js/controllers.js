@@ -1,20 +1,23 @@
 angular.module('resumeApp.controllers', []).
-controller('resumeController', function($scope) {
+controller('resumeController', function($scope, $http) {
 
     $scope.showCard = false;
 
     $scope.addResume = function(){
-        if(document.getElementById('file').files[0] != undefined) {
-            var file = document.getElementById('file').files[0],
-                reader = new FileReader();
+        $http({
+            url: 'sample_resume.txt',
+            dataType: 'json',
+            method: 'GET',
+            data: '',
+            headers: {
+                "Content-Type": "text/plain"
+            }
 
-            reader.onloadend = function (e) {
-                var data = e.target.result;
-                Materialize.toast(file.name + ' has been uploaded!', 4000);
-                $scope.extractResume(data);
-            };
-            reader.readAsBinaryString(file);
-        }
+        }).success(function(response){
+            $scope.extractResume(response);
+        }).error(function(error){
+            $scope.extractResume('error');
+        });
     };
 
     $scope.parseEmployment = function (i, data) {
@@ -85,7 +88,6 @@ controller('resumeController', function($scope) {
             }
         }
         $scope.showCard= true;
-        $scope.$apply();
     };
 
     $scope.resume = {
