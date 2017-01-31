@@ -7,8 +7,8 @@
     <!-- CSS  -->
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body ng-app="resumeApp" ng-controller="resumeController">
 <div class="section no-pad-bot" id="index-banner">
@@ -29,7 +29,7 @@
             <form class="col s12">
                 <div class="card blue-grey darken-1 " ng-show="showCard">
                     <div class="card-content white-text">
-                        <h3 class="center"><img src="../contact-icon.png" alt="" class="circle">{{resume.Info.name}}
+                        <h3 class="center"><img src="contact-icon.png" alt="" class="circle">{{resume.Info.name}}
                         </h3>
                         <p class="center md-subhead">Phone: {{resume.Info.phone}}</p>
                         <p class="center md-subhead">Email: {{resume.Info.email}}</p>
@@ -103,10 +103,10 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 
 <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
-<script src="js/app.js"></script>
-<script src="js/controllers.js"></script>
+<script src="app/js/materialize.js"></script>
+<script src="app/js/init.js"></script>
+<script src="app/js/app.js"></script>
+<script src="app/js/controllers.js"></script>
 
 </body>
 </html>
